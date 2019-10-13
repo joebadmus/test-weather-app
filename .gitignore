@@ -7,6 +7,9 @@ yarn-error.log*
 
 terraform/.terraform
 
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+
 # Runtime data
 pids
 *.pid
