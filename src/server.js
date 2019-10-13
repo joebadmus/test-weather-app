@@ -27,7 +27,7 @@ app.post('/', function (req, res) {
         res.render('index', {weather: null, error: 'Error, please try again'});
       } else {
         let temp = ((weather.main.temp - 32) * 5/9).toString(); 
-        let weatherText = `It's ${temp} degrees in ${weather.name}!`;
+        let weatherText = `It's ${temp} degrees celsius in ${weather.name}!`;
         res.render('index', {weather: weatherText, error: null});
       }
     }
