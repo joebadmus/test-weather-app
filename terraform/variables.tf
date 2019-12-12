@@ -13,7 +13,7 @@ variable "app_name" {
 }
 
 variable "environment" {
-  default     = "pro"
+  default     = "dev"
   description = "Name of the environment. e.g. prod, qa, dev"
 }
 
