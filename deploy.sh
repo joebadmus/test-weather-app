@@ -17,11 +17,15 @@ then
     public_url=$(terraform output load_balancer_address)
 
     # Build image and login to ECR
-    login_cmd=$(aws ecr get-login --no-include-email)
-    cd .. && sudo docker build --rm -f Dockerfile -t "$repo_url" .
-    eval "sudo $login_cmd"
+    # login_cmd=$(aws ecr get-login --no-include-email)
+    get_login=$(echo $repo_url | cut -d'/' -f 1) 
+    get_region=$(echo $repo_url | cut -d'.' -f 4) 
+    login_cmd=$(aws ecr get-login-password --region $get_region | docker login --username AWS --password-stdin $get_login)
+
+    cd .. && docker build --rm -f Dockerfile -t "$repo_url" .
+    # eval "sudo $login_cmd"
     # Push image
-    sudo docker push $repo_url
+    docker push $repo_url
 
     # Trigger a new deployment of the fargat containers.
     echo "Triggering app deployment!"

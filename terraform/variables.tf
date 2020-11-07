@@ -50,13 +50,13 @@ variable "resource_low_threshold" {
   description = "The minimum percentage of Resource  utilization average."
 }
 variable "running_tasks_threshold" {
-  type        = "string"
+  type        = string
   description = "Period to evaluate alarm."
   default     = "2"
 }
 
 variable "resource_utilization_period" {
-  type        = "string"
+  type        = string
   description = "Period to evaluate alarm."
   default     = "180"
 }
