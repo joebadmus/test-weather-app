@@ -9,10 +9,7 @@ terraform/.terraform
 
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
-<<<<<<< HEAD
 terraform/.terraform.tfstate.lock.info
-=======
->>>>>>> 28d7159b78322508fb410e273659e64a556d51c1
 
 # Runtime data
 pids
